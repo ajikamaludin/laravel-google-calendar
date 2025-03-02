@@ -216,6 +216,11 @@ class Event
         $this->getGoogleCalendar($this->calendarId)->deleteEvent($eventId ?? $this->id, $optParams);
     }
 
+    public function setDescription(string $description)
+    {
+        $this->googleEvent->setDescription($description);
+    }
+
     public function addAttendee(array $attendee)
     {
         $this->attendees[] = new Google_Service_Calendar_EventAttendee([
@@ -260,6 +265,11 @@ class Event
     public function getCalendarId(): string
     {
         return $this->calendarId;
+    }
+
+    public function setCalenderId(string $calenderId)
+    {
+        $this->calendarId = $calenderId;
     }
 
     protected static function getGoogleCalendar(?string $calendarId = null): GoogleCalendar
