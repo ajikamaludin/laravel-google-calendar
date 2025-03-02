@@ -267,9 +267,9 @@ class Event
         return $this->calendarId;
     }
 
-    public function setCalenderId(string $calenderId)
+    public function setCalendarId(string $calendarId)
     {
-        $this->calendarId = $calenderId;
+        $this->calendarId = $calendarId;
     }
 
     protected static function getGoogleCalendar(?string $calendarId = null): GoogleCalendar
